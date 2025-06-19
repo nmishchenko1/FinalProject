@@ -1,11 +1,12 @@
+// scripts/nav.js
 document.addEventListener('DOMContentLoaded', () => {
-  const isRoot = location.pathname.endsWith('index.html') || location.pathname === '/FinalProject/';
-  const navPath = isRoot
-    ? 'https://nmishchenko1.github.io/FinalProject/pages/nav.html'
-    : 'https://nmishchenko1.github.io/FinalProject/pages/nav.html';
+  const navURL = 'https://nmishchenko1.github.io/FinalProject/pages/nav.html';
 
-  fetch(navPath)
-    .then(res => res.text())
+  fetch(navURL)
+    .then(res => {
+      if (!res.ok) throw new Error('Navigation fetch failed');
+      return res.text();
+    })
     .then(html => {
       document.getElementById('nav-placeholder').innerHTML = html;
 
@@ -14,5 +15,6 @@ document.addEventListener('DOMContentLoaded', () => {
       if (toggle && links) {
         toggle.addEventListener('click', () => links.classList.toggle('active'));
       }
-    });
+    })
+    .catch(err => console.error('Nav load error:', err));
 });
