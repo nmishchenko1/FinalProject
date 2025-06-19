@@ -1,3 +1,4 @@
+/* style.css */
 body {
     font-family: 'Helvetica Neue', sans-serif;
     margin: 0;
@@ -12,6 +13,8 @@ body {
   main {
     flex: 1;
     padding: 2rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
   }
   
   h1 {
@@ -36,6 +39,7 @@ body {
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
+    transition: transform 0.3s ease;
   }
   
   .style-card img {
@@ -55,10 +59,31 @@ body {
     margin: 0;
   }
   
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 1.8rem;
+    }
+  
+    .style-card {
+      flex: 0 0 180px;
+    }
+  
+    .style-card img {
+      height: 240px;
+    }
+  }
+  
   footer {
     background-color: #111;
     color: #fff;
     text-align: center;
     padding: 1.5rem 1rem;
     font-size: 0.95rem;
+    line-height: 1.6;
+    margin-top: auto;
   }
+  
+  footer p {
+    margin: 0;
+  }
+  
