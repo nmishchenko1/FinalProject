@@ -1,0 +1,138 @@
+body {
+    font-family: 'Helvetica Neue', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    color: #111;
+  }
+  
+  /* Центровка контента */
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1rem 4rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  /* Заголовок */
+  main h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 2rem; /* Увеличенный отступ под заголовком */
+  }
+  
+  /* Изображение */
+  main img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    margin-bottom: 1.5rem; /* ← исправлен синтаксис */
+  }
+  
+  /* Текст под изображением */
+  main p {
+    font-style: italic;
+    font-size: 1.1rem;
+    color: #444;
+    line-height: 1.6;
+    max-width: 800px;
+  }
+  
+  /* Навигация */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: white;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .brand-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+  
+  .nav-links ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    padding-left: 0;
+    margin: 0;
+  }
+  
+  .nav-links ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+  }
+  
+  .nav-links ul li a:hover {
+    border-bottom: 2px solid black;
+  }
+  
+  /* Бургер-меню */
+  .toggle-button {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 24px;
+    height: 18px;
+    cursor: pointer;
+  }
+  
+  .toggle-button .bar {
+    height: 3px;
+    width: 100%;
+    background-color: #333;
+    border-radius: 10px;
+  }
+  
+  /* Адаптив */
+  @media (max-width: 768px) {
+    .toggle-button {
+      display: flex;
+    }
+  
+    .nav-links {
+      display: none;
+      width: 100%;
+    }
+  
+    .nav-links ul {
+      flex-direction: column;
+      align-items: center;
+      padding-top: 1rem;
+    }
+  
+    .nav-links.active {
+      display: block;
+    }
+  
+    main p {
+      font-size: 1rem;
+    }
+  
+    main h1 {
+      font-size: 1.7rem;
+    }
+  }
+  
+  /* Футер */
+  footer {
+    background-color: #111;
+    color: #fff;
+    text-align: center;
+    padding: 1.5rem 1rem;
+    font-size: 0.95rem;
+    margin-top: 3rem;
+    line-height: 1.6;
+  }
+  
+  footer p {
+    margin: 0;
+  }
