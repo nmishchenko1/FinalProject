@@ -1,14 +1,16 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const placeholder = document.getElementById("nav-placeholder");
-  if (placeholder) {
-    const src = placeholder.getAttribute("data-src") || "pages/nav.html";
-    fetch(src)
-      .then((res) => res.text())
-      .then((data) => {
-        placeholder.innerHTML = data;
-      })
-      .catch((err) => {
-        console.error("Navigation load error:", err);
-      });
-  }
+document.addEventListener('DOMContentLoaded', () => {
+  const isRoot = location.pathname.endsWith('index.html') || location.pathname === '/FinalProject/';
+  const navPath = isRoot ? 'pages/nav.html' : 'nav.html';
+
+  fetch(navPath)
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById('nav-placeholder').innerHTML = html;
+
+      const toggle = document.querySelector('.toggle-button');
+      const links = document.querySelector('.nav-links');
+      if (toggle && links) {
+        toggle.addEventListener('click', () => links.classList.toggle('active'));
+      }
+    });
 });
