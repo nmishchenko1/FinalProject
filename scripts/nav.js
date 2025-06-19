@@ -1,8 +1,6 @@
+// scripts/nav.js
 document.addEventListener('DOMContentLoaded', () => {
-  const isRoot = location.pathname.endsWith('index.html') || location.pathname === '/FinalProject/';
-  const navPath = isRoot ? 'pages/nav.html' : 'nav.html';
-
-  fetch(navPath)
+  fetch('https://nmishchenko1.github.io/FinalProject/pages/nav.html')
     .then(res => res.text())
     .then(html => {
       document.getElementById('nav-placeholder').innerHTML = html;
