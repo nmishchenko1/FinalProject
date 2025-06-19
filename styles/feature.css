@@ -58,7 +58,16 @@ body {
   }
   
   @media (max-width: 768px) {
-    h1 {
+    .nav-links {
+      display: none;
+      width: 100%;
+    }
+  
+    .nav-links.active {
+      display: block;
+    }
+  }
+      h1 {
       font-size: 1.8rem;
     }
   
@@ -79,7 +88,6 @@ body {
       font-size: 0.9rem;
       height: auto;
     }
-  }
   
   footer {
     background-color: #111;
