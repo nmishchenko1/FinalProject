@@ -40,6 +40,7 @@ body {
     color: #444;
     line-height: 1.6;
     max-width: 800px;
+    margin-bottom: 2.5rem; 
   }
   
   /* Навигация */
